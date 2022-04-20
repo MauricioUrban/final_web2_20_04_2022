@@ -1,0 +1,43 @@
+De un ejemplo de invocación (verbo, URL, y parámetros) al servicio que permite:
+2) 
+
+* Obtener la lista de cuentas
+GET cuenta/  getAllCuentas()
+
+* Eliminar una cuenta
+DELETE cuenta/:ID deleteCuenta($id)
+
+* Obtener la lista de operaciones con fecha mayor a una fecha dada.
+GET operaciones/fecha_operacion>fecha getOperacionesFechaMayor($fecha)
+
+3) Justifique la falsedad de la siguientes oraciones: 
+a.- En la Vista se implementa la lógica del negocio. FALSO
+
+La vista maneja el FrontEnd, la logica la maneja el Controller
+
+b.- Las APIs REST solo son implementadas en PHP. FALSO
+
+Las APIREST son una arquitectura de desarrollo web que pueden ser implementada por varios programas de desarrollo
+
+c.- La session en PHP se mantiene siempre hasta que se hace destroy_session FALSO
+Se le puede poner un tiempo para que caduque la session
+
+d.- La única forma de usar una base de datos en PHP es necesario usar PDO. FALSO
+Se puede usar una base de datos sin usar PDO en PHP, lo que hace PDO es hacernos de puente entre cualquier DB y cualquier programa de desarrollo
+
+e.- Una API REST tiene que tener siempre implementados los 4 verbos de HTTP. FALSO
+No es necesario, solo los que se van a utiliazar.
+
+4)Describa detalladamente los pasos que ocurren desde que un usuario ingresa 
+su usuario y contraseña en una pantalla de login y es autenticado.
+El sitio en cuestión está implementado con las tecnologías enseñadas por la cátedra.
+Remarque cada procesamiento, tecnología utilizada en la materia para esto y en qué programa/máquina estaría corriendo cada parte.
+El listado debe ser lo más detallado posible en todas sus etapas, incluyendo programas, componentes arquitectónicos y clases.
+
+
+Al ingresar los datos a una pantalla (vista) de login se chequea que el usuario y pass son valido, 
+
+ esto lo hace el controllador. 
+Este mismo le pide al Modelo el usuario y chequea que existan, y que la contraseña coincida con la que vino de la base de datos.
+El controlador le da el OK y carga tanto Login como ID en el arreglo session (SESSION['usuario'], SESSION['ID_USER']), y la vista
+se encarga de mostrarle el resultado al usuario.
